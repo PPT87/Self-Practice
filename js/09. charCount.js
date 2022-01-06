@@ -32,6 +32,8 @@ function charCount(str) {
   return result;
 }
 
+console.log(charCount('Today is fantastic!'))
+
 /*--- convert str to array and use reduce with a ternary ---*/
 // function charCount(str) {
 //   return str.split('').reduce(function(countObj, char) {
