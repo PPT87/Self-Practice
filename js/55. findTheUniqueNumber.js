@@ -20,7 +20,6 @@
           uniq[num] = 1
         }
       }
-      console.log(uniq)
       for (let i in uniq){
         if (uniq[i] === 1){
           return parseFloat(i)
