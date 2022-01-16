@@ -43,22 +43,25 @@ function balancedBrackets(str) {
   }
   return true;
 }
+console.log(balancedBrackets("[()]"));
 
 /*--- Using Array.every method to iterate unless false is returned
-      Also using arrow function ---*/
+Also using arrow function ---*/
 // function balancedBrackets(str) {
-//   var stack = [];
-//   return str.split('').every(c => {
-//     if ('([{'.includes(c)) {
-//       return stack.push(c);
-//     } else {
-//       return '() {} []'.includes(stack.pop() + c)
-//     }
-//   });
-// }
+  //   var stack = [];
+  //   return str.split('').every(c => {
+    //     if ('([{'.includes(c)) {
+      //       return stack.push(c);
+      //     } else {
+        //       return '() {} []'.includes(stack.pop() + c)
+        //     }
+        //   });
+        // }
+        
+        /*--- Holy ternary Batman! Almost a one-liner! ---*/
+        // function balancedBrackets(str) {
+          //   var a = [];
+          //   return str.split('').every(c => '([{'.includes(c) ? a.push(c) : '() {} []'.includes(a.pop() + c));
+          // }
 
-/*--- Holy ternary Batman! Almost a one-liner! ---*/
-// function balancedBrackets(str) {
-//   var a = [];
-//   return str.split('').every(c => '([{'.includes(c) ? a.push(c) : '() {} []'.includes(a.pop() + c));
-// }
+
