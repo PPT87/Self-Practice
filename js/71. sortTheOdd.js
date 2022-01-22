@@ -10,4 +10,23 @@ let sortArray = (array) => {
   return result = array.map(number => number % 2 ? oddNums.shift() : number)
 }
 
+/***********************************************************/
+// solution 2
+
+let sortArray = (array) => {
+  let oddNums = []
+  for (let i=0; i<array.length; i++){
+    if (array[i] % 2 !== 0){
+      oddNums.push(array[i])
+      oddNums = oddNums.sort((a,b) => a-b)
+    }
+  }
+  for (let i=0; i<array.length; i++){
+    if (array[i] % 2 !== 0){
+      array[i] = oddNums.shift()
+    }
+  }
+  return array
+}
+
 console.log(sortArray([1, 11, 2, 8, 3, 4, 5]));
