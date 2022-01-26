@@ -5,6 +5,7 @@
 // For inputArray = ["aba", "aa", "ad", "vcd", "aba"], the output should be
 // solution(inputArray) = ["aba", "vcd", "aba"].
 
+
 function solution(inputArray){
   let longestLength = inputArray[0].length
 
@@ -21,3 +22,23 @@ function solution(inputArray){
 
 console.log(solution(["aba", "aa", "ad", "vcd", "aba"]));
 console.log(solution(["abc", "eeee", "abcd", "dcd"]));
+
+/*************************************************/
+// solution 2
+
+// function solution(inputArray) {
+//   let largestLength = 0
+
+//   for (let i=0; i<inputArray.length; i++){
+//     if (inputArray[i].length > largestLength){
+//       result = []
+//       largestLength = inputArray[i].length
+//       result.push(inputArray[i]);
+//     }
+//     else if (inputArray[i].length === largestLength){
+//       result.push(inputArray[i])
+//     }
+//   }
+//   return result
+// }
+
