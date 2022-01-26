@@ -9,25 +9,45 @@
 // For n = 239017, the output should be
 // solution(n) = false.
 
+// let solution = (n) => {
+//   let firstSum = 0
+//   let secondSum = 0
+//   let splitNums = n.toString().split('')
+//   if (splitNums.length / 2 !== 0){
+//     return false
+//   }
+//   for (let i = 0; i < splitNums.length % 2; i++) {
+//     firstSum += parseInt(splitNums[i]);
+//   }
+//   for (let i=(splitNums.length/2); i<splitNums.length; i++){
+//     secondSum += parseInt(splitNums[i])
+//   }
+//   return firstSum === secondSum
+// }
 
-let solution = (num) => {
-  let firstSum = 0
-  let secondSum = 0
-  let splitNums = num.toString().split('')
-  if (splitNums.length % 2 !== 0){
-    return false
-  }
-  for (let i = 0; i < splitNums.length / 2; i++) {
-    firstSum += parseInt(splitNums[i]);
-  }
-  for (let i=(splitNums.length/2); i<splitNums.length; i++){
-    secondSum += parseInt(splitNums[i])
-  }
-  if (firstSum === secondSum) {
-    return true
-  } else {
-    return false
-  }
+/*****************************************************************/
+// solution 2
+
+function solution(n) {
+  n = n.toString();
+
+  let half = n.length / 2;
+
+  let firstHalf = n
+    .substring(0, half)
+    .split("")
+    .reduce((a, b) => {
+      return parseInt(a) + parseInt(b);
+    });
+
+  let secondHalf = n
+    .substring(half, n.length)
+    .split("")
+    .reduce((a, b) => {
+      return parseInt(a) + parseInt(b);
+    });
+
+  return firstHalf === secondHalf
 }
 
-console.log(solution(239077));
+console.log(solution(239071));
