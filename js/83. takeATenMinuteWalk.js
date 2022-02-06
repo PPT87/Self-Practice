@@ -5,7 +5,6 @@
 const isValidWalk = (walk) => {
   let ns = 0
   let we = 0
-  let dt = walk.length
 
   for (let i = 0; i < walk.length; i++){
     switch (walk[i]){
@@ -15,7 +14,7 @@ const isValidWalk = (walk) => {
       case 'e': we--; break
     }
   }
-  return dt === 10 && ns === 0 && we === 0
+  return walk.length === 10 && ns === 0 && we === 0
 }
 
 console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"])); //true
