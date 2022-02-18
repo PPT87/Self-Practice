@@ -3,9 +3,9 @@
 // ex chunkArray([1,2,3,4,5,6,7], 3) === [[1,2,3], [4,5,6], [7]]
 
 const chunkArray = (arr, num) => {
-  const chunkedArr = []
-  arr.forEach(val => {
-    const last = chunkedArr[chunkedArr.length -1]
+  const chunkedArr = [];
+  arr.forEach((val) => {
+    const last = chunkedArr.at(-1); //.at is the same as chunkedArr[chunkedArr.length -1]
 
     if (!last || last.length === num) {
       chunkedArr.push([val]);
@@ -14,8 +14,7 @@ const chunkArray = (arr, num) => {
     }
   });
 
-  
-  return chunkedArr
-}
+  return chunkedArr;
+};
 
 console.log(chunkArray([1, 2, 3, 4, 5, 6, 7], 2));
