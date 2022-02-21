@@ -20,11 +20,13 @@
 // Output: false
 
 var isValid = function(s) {
+
 const stack = []
 
 for (let i=0; i<s.length; i++){
   let char = s[i]
-  console.log(char)
+  
+  //looking to see if the current char is an opening bracket and then pushing it to the stack
   switch(char){
     case '(': stack.push(')')
     break
@@ -32,11 +34,15 @@ for (let i=0; i<s.length; i++){
     break
     case '{': stack.push('}')
     break
+
+    //if none of the values matches above, it will pop the closing bracket to be the topElement
     default:
       topElement = stack.pop()
+      //then it will compare if the topElement matches the char. if the characters don't match, the expression is invalid
       if(char !== topElement) return false
   }
 }
+//if the stack still has remaining elements, it's not balanced and therefor false.
 return stack.length === 0
 }
 
