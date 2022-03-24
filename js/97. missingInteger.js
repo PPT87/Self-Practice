@@ -18,8 +18,8 @@
 
 
 const solution = A => {
-  for (let i=1; i<10; i++){
-    if (A.includes(i)){
+  for (let i=1; i<100000; i++){
+    if (!A.includes(i)){
       return i
     }
   }
