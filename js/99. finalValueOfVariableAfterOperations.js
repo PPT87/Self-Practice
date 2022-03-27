@@ -53,3 +53,5 @@ const finalValueAfterOperations = operations => {
   }
   return X;
 };
+
+console.log(finalValueAfterOperations(["++X", "++X", "X++"]));
