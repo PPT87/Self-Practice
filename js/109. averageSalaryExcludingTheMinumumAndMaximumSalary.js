@@ -22,25 +22,30 @@
 // 1000 <= salary[i] <= 106
 // All the integers of salary are unique.
 
+
 const average = salary => {
   salary = salary.sort((a,b) => a-b)
-  // let sum = 0
-  // let result = []
-  // let maxSalary = salary.at(-1)
-  // let minSalary = salary[0]
-  
-  // for (let i=0; i<salary.length; i++){
-  //   if (salary[i] !== minSalary && salary[i] !== maxSalary){
-  //     result.push(salary[i])
-  //     sum += salary[i]
-  //   }
-  // }
-  // return sum / result.length
-
   let sum = 0
-  sum = ((salary.reduce((acc,curr) => acc + curr)) - (salary[0] + salary.at(-1))) / (salary.length - 2)
-  return sum
+  return sum = ((salary.reduce((acc,curr) => acc + curr)) - (salary[0] + salary.at(-1))) / (salary.length - 2)
 }
 
+console.log(average([4000,3000,1000,2000])); //2500
 
-console.log(average([4000,3000,1000,2000])); //2500.00000
+
+
+//Original Solution
+// const average = salary => {
+//   salary = salary.sort((a, b) => a - b);
+//   let sum = 0
+//   let result = []
+//   let maxSalary = salary.at(-1)
+//   let minSalary = salary[0]
+  
+//   for (let i=0; i<salary.length; i++){
+//     if (salary[i] !== minSalary && salary[i] !== maxSalary){
+//       result.push(salary[i])
+//       sum += salary[i]
+//     }
+//   }
+//   return sum / result.length
+// }
