@@ -29,7 +29,7 @@
 
 //solution1
 const hammingWeight = n => {
-  n = n.toString(2).split('')
+  n = n.toString(2).split('') //converts a number to a string, using base 2 (binary)
   let count = 0 
 
   for (let i=0; i<n.length; i++){
